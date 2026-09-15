@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+  --primary: #0f172a;      /* Deep Slate */
+  --accent: #3b82f6;       /* Soft Electric Blue */
+  --bg: #ffffff;           /* Clean White */
+  --card-border: #f1f5f9;  /* Very Light Grey */
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --glass: rgba(255, 255, 255, 0.8);
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1400px; /* Wider for a cinematic feel */
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Header: Editorial Style */
+.header {
+  text-align: left; /* Shifted to left for modern layout */
+  margin-bottom: 80px;
+  border-left: 4px solid var(--primary);
+  padding-left: 30px;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: 15px;
+  font-weight: 300;
+}
+
+/* Grid Layout: Masonry-like precision */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* Card Styling: "The Framed Look" */
+.card {
+  position: relative;
+  background: var(--bg);
+  border-radius: 0px; /* Square/Sharp corners are trending in premium UI */
+  transition: var(--transition-smooth);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Fixed professional photography aspect ratio */
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(20%); /* Artistic touch */
+  transition: transform 0.8s var(--transition-smooth), filter 0.5s;
+}
+
+.card:hover .image-wrapper img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+
+}
+
+/* Card Info: Minimalist Overlay */
+.card-info {
+  padding: 20px 0; /* Removing padding inside to align with image edges */
+  border-bottom: 1px solid var(--card-border);
+}
+
+.card-info small {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-info h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: black;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+a{
+  text-decoration: none;
+}
+/* Navigation: Fixed Glassmorphism bar */
+.pagination {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  color: var(--accent);
+}
+
+.btn:disabled {
+  opacity: 0.2;
+}
+
+.page-number {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Refined Loader */
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--card-border);
+  border-top: 2px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container { padding: 40px 20px; }
+  .header { margin-bottom: 40px; }
+  .pagination { width: 90%; justify-content: space-between; }
+}
+
