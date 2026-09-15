@@ -1,0 +1,11 @@
+- redux
+- which porblem it solved and created
+- who solve redux problems
+- redux toolkit 
+- basic installation and setup
+- slices => features
+- creating providers
+- how to create slice
+- hoe to cretate reducer
+- useDispatch
+- useSelector

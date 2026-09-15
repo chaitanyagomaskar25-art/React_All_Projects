@@ -1,0 +1,169 @@
+/* Container & Background */
+.form-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, sans-serif;
+  border: 1px solid #f0f0f0;
+}
+
+/* Tabs Header (Stepper) */
+.tabs-header {
+  display: flex;
+  background: #f9fafb;
+  border-bottom: 1px solid #eee;
+  padding: 0 1rem;
+}
+
+.tab-item {
+  flex: 1;
+  padding: 1.25rem 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #2563eb;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2563eb;
+}
+
+.tab-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active .tab-number {
+  background: #2563eb;
+  color: white;
+}
+
+/* Body Content */
+.tab-body {
+  padding: 2.5rem;
+  min-height: 250px;
+}
+
+.tab-body label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.tab-body input[type="text"],
+.tab-body input[type="number"],
+.tab-body input[type="email"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tab-body input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Error Messages */
+.tab-body span {
+  color: #dc2626;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Checkbox & Radio Styling */
+.tab-body div > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.tab-body div > label:hover {
+  background: #f1f5f9;
+}
+
+/* Footer Buttons */
+.tab-footer {
+  padding: 1.5rem 2.5rem;
+  background: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.footer-right {
+  margin-left: auto;
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.btn-submit {
+  background: #059669;
+  color: white;
+}
+
+.btn-submit:hover {
+  background: #047857;
+}

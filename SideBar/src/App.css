@@ -1,0 +1,100 @@
+/* Container */
+.tree-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #374151;
+  user-select: none;
+  max-width: 500px;
+}
+
+/* Individual Row */
+.node-row {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.node-row:hover {
+  background-color: #f3f4f6;
+}
+
+/* Toggle Arrow Animation */
+.icon-wrapper {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-icon {
+  font-size: 10px;
+  color: #9ca3af;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.toggle-icon.expanded {
+  transform: rotate(90deg);
+  color: #4b5563;
+}
+
+/* Typography */
+.node-name {
+  font-size: 14px;
+  margin-left: 6px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-name.folder {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Hidden Actions - Show on Hover */
+.node-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.node-row:hover .node-actions {
+  opacity: 1;
+}
+
+/* Buttons */
+.node-actions button {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.btn-delete:hover {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Indentation & Guide Lines */
+.node-children {
+  margin-left: 18px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 4px;
+}
